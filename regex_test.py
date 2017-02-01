@@ -16,3 +16,8 @@ print re.findall("a.c", "abc")                  # ['abc']
 print re.findall("a.c", "abbc")                 # []
 print re.findall("a.c", "ac")                   # []
 print re.findall("a.c", "acc")                  # ['acc']
+
+print '# Combining . with *'
+print re.findall("a.*c", "abc")                 # ['abc']
+print re.findall("a.*c", "abbc")                # ['abbc']
+print re.findall("a.*c", "ac")                  # ['ac']
