@@ -10,3 +10,9 @@ print re.findall("ab*c", "ABC")  # [] case sensitive
 
 print '# Using re.IGNORECASE'
 print re.findall("ab*c", "ABC", re.IGNORECASE)  # ['ABC']
+
+print '# Using . period - any single occurrence'
+print re.findall("a.c", "abc")                  # ['abc']
+print re.findall("a.c", "abbc")                 # []
+print re.findall("a.c", "ac")                   # []
+print re.findall("a.c", "acc")                  # ['acc']
