@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup  # BeautifulSoup4 package
 from urllib2 import urlopen
+import os
 
 # Grab the HTML from a web page just like we did
 # in the first example
@@ -11,4 +12,6 @@ html_text = html_page.read()
 # The second argument tells beautifulsoup which parser to use
 soup = BeautifulSoup(html_text, "lxml")
 
-print soup.get_text().encode("utf-8")
+result = soup.get_text().encode("utf-8")
+text = os.linesep.join([s for s in result.splitlines() if s])
+print text
